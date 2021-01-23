@@ -1,0 +1,13 @@
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\bin\Debug\PrtScnPro.exe.config
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\bin\Debug\PrtScnPro.exe
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\bin\Debug\PrtScnPro.pdb
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\bin\Debug\PrtScnPro.xml
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.vbprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.Form1.resources
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.Resources.resources
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.vbproj.GenerateResource.cache
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.vbproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.exe
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.xml
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.pdb
+C:\Users\Lenovo\source\repos\PrtScnPro\PrtScnPro\obj\Debug\PrtScnPro.Form2.resources
