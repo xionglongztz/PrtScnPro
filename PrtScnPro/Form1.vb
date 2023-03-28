@@ -8,7 +8,7 @@
         fPointY = MousePosition.Y '赋值
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged '是否置顶
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged  '是否置顶
         If CheckBox1.Checked = True Then
             TopMost = True
         Else
@@ -24,11 +24,19 @@
         Using g As Graphics = Graphics.FromImage(imgpnlLock)
             g.CopyFromScreen(pointLeftSoure, pointLeftDestination, sizeBackImage) '截屏
         End Using
-        If SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then ''显示保存对话框，并判断如果按下了是
-            imgpnlLock.Save(SaveFileDialog1.FileName) '保存图片
+
+        If CheckBox2.Checked And Label2.Text <> "" Then
+            imgpnlLock.Save(Label2.Text + "\" + Format(DateAndTime.Now, "yyyy-MM-dd HH-mm-ss") + ".png"）
+        ElseIf SaveFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then ''显示保存对话框，并判断如果按下了是
+            If Label2.Text <> "" Then
+                imgpnlLock.Save(SaveFileDialog1.FileName) '保存图片
+            End If
             SaveFileDialog1.InitialDirectory = IO.Path.GetDirectoryName(SaveFileDialog1.FileName) '返回上一步保存的文件位置
             SaveFileDialog1.FileName = "未命名.png" '默认文件名
+            Label2.Text = SaveFileDialog1.InitialDirectory
         End If
+
+
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -55,6 +63,10 @@
         End If
     End Sub
 
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim pointLeftSoure As New Point(sPointX, sPointY) '截屏起点
         Dim pointLeftDestination As New Point(0, 0) '图片起点
@@ -66,8 +78,8 @@
         Clipboard.SetImage(imgpnlLock) '保存截屏到剪贴板
     End Sub
 
-    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        If e.KeyCode = Keys.ControlKey Then '如果按下ctrl
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.S Then '如果按下ctrl
             Form2.Show() '显示框架窗口
             Form2.Left = MousePosition.X '起始坐标x
             Form2.Top = MousePosition.Y '起始坐标y
@@ -79,15 +91,7 @@
         End If
     End Sub
 
-    Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
-        If e.KeyCode = Keys.ControlKey Then '如果释放Ctrl
-            Timer1.Enabled = False '关闭计时器
-            With Me
-                .Label1.Text = "区域已选择，你可以：" '显示提示
-                .Button1.Enabled = True '按钮可用
-                .Button2.Enabled = True
-            End With
-        End If
-        Form2.Dispose() '关闭自己
+    Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs)
+
     End Sub
 End Class
